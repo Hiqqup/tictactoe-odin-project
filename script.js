@@ -83,7 +83,8 @@ let ttt = (function(){
             const key = board.setMark(x,y,turn.get());
             switch (key){
                 case KEY.occupied:
-                    return KEY.occupied;
+                case KEY.draw:
+                    return key;
                 case KEY.won:
                     gameOver= true;
                     return turn.get() + " won.";
